@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctor Portal | Carepoint</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="portal-page doctor-portal">
+  <main class="portal-shell">
+    <header class="portal-header">
+      <a class="portal-brand" href="index.html"><span>+</span> CAREPOINT</a>
+      <a class="portal-signout" href="index.html">Sign out</a>
+    </header>
+    <section class="portal-welcome">
+      <p class="eyebrow">DOCTOR PORTAL</p>
+      <h1>Good morning, <em id="doctor-name">Doctor</em>.</h1>
+      <p>Your patient conversations and schedule, together.</p>
+    </section>
+    <section class="portal-stats" aria-label="Doctor summary">
+      <div><strong>12</strong><span>Today's appointments</span></div><div><strong>03</strong><span>Pending approvals</span></div><div><strong>08</strong><span>Unread patient chats</span></div>
+    </section>
+    <section class="portal-layout" aria-label="Doctor portal sections">
+      <div class="portal-main-column">
+        <article class="portal-section patient-directory"><div class="section-heading"><div><span class="card-kicker">ALL PATIENTS</span><h2>Start a conversation</h2></div><span class="online-status">Secure</span></div><div id="registered-patients"><button class="patient-choice active" type="button" data-patient="Alex Morgan"><span class="patient-avatar coral">AM</span><span><strong>Alex Morgan</strong><small>Active conversation</small></span></button><button class="patient-choice" type="button" data-patient="Jamie Rivera"><span class="patient-avatar">JR</span><span><strong>Jamie Rivera</strong><small>Appointment today</small></span></button><button class="patient-choice" type="button" data-patient="Taylor Singh"><span class="patient-avatar">TS</span><span><strong>Taylor Singh</strong><small>Care plan follow-up</small></span></button></div></article>
+        <article class="portal-section doctor-appointments"><div class="section-heading"><div><span class="card-kicker">TODAY'S SCHEDULE</span><h2>Appointments to accept</h2></div><a href="#">Full schedule</a></div><div class="appointment-row" data-patient="Alex Morgan" data-doctor="maya"><div class="patient-avatar coral">AM</div><div class="appointment-details"><strong>Alex Morgan</strong><small>Follow-up consultation &middot; 10:30 AM</small></div><span class="appointment-status approved">Confirmed</span><button class="attended-button" type="button" data-patient="Alex Morgan" data-doctor="maya">Mark attended</button><button class="chat-open-button" type="button" data-patient="Alex Morgan">Chat</button></div><div class="appointment-row" data-patient="Jamie Rivera" data-doctor="maya"><div class="patient-avatar">JR</div><div class="appointment-details"><strong>Jamie Rivera</strong><small>Annual wellness visit &middot; 2:00 PM</small></div><span class="appointment-status pending">Pending</span><button class="approve-button" type="button">Accept</button><button class="chat-open-button" type="button" data-patient="Jamie Rivera">Chat</button></div></article>
+        <article class="portal-section"><div class="section-heading"><div><span class="card-kicker">PATIENT DETAILS</span><h2 id="doctor-detail-name">Alex Morgan</h2></div><span class="online-status">Active chat</span></div><div class="doctor-patient-details"><div><small>Email</small><strong id="doctor-detail-email">alex.morgan@example.com</strong></div><div><small>Phone</small><strong id="doctor-detail-phone">(555) 204-0114</strong></div><div><small>Next follow-up</small><strong>September 08, 10:30 AM</strong></div></div><div class="medication-callout"><span class="card-kicker">CURRENT MEDICATIONS</span><strong id="doctor-detail-medications">Not provided</strong></div><a class="doctor-link" href="#">Open full patient record &rarr;</a></article>
+        <article class="portal-section prescription-section"><div class="section-heading"><div><span class="card-kicker">PRESCRIBE MEDICINE</span><h2 id="prescription-patient">Alex Morgan</h2></div><span class="online-status">Doctor only</span></div><form class="prescription-form"><label>Medicine name<input name="medicine" type="text" placeholder="e.g. Amoxicillin" required /></label><div class="prescription-fields"><label>Dosage<input name="dosage" type="text" placeholder="e.g. 500 mg" required /></label><label>Frequency<select name="frequency"><option>Once daily</option><option>Twice daily</option><option>Every 6 hours</option><option>As needed</option></select></label></div><label>Instructions<textarea name="instructions" rows="2" placeholder="How should the patient take it?"></textarea></label><button class="prescription-submit" type="submit">Save prescription &rarr;</button><p class="prescription-feedback" role="status" aria-live="polite"></p></form><small class="ai-disclaimer">Demo workflow only. A real prescription requires clinical authorization and a secure medical system.</small></article>
+      </div>
+      <aside class="portal-side-column">
+        <article class="portal-section doctor-section"><div class="section-heading"><div><span class="card-kicker">CARE TEAM</span><h2>Connected clinicians</h2></div><span class="online-status">Available</span></div><div id="care-team-list"></div></article>
+        <article class="portal-section staff-summary"><span class="card-kicker">CLINIC SNAPSHOT</span><h2>Care in motion</h2><div class="metric-line"><span>Appointments completed</span><strong>75%</strong></div><div class="metric-bar metric-75"><span></span></div><div class="metric-line"><span>Follow-ups on track</span><strong>86%</strong></div><div class="metric-bar metric-86"><span></span></div></article>
+        <article class="portal-section chat-section doctor-chat"><div class="section-heading"><div><span class="card-kicker">PATIENT CHAT</span><h2 id="doctor-chat-name">Alex Morgan</h2></div><span class="online-status">Online</span></div><div class="chat-thread"><p class="chat-bubble incoming" data-sender="Alex Morgan">Hi Doctor, should I continue recording my blood pressure twice a day?</p><small class="chat-time">Today, 8:48 AM</small><p class="chat-bubble outgoing" data-sender="Doctor">Yes, please continue until our follow-up. I will review the readings together with you.</p></div><form class="chat-form"><input class="chat-input" type="text" placeholder="Reply to Alex..." aria-label="Message patient" /><button type="submit" aria-label="Send message">&rarr;</button></form></article>
+      </aside>
+    </section>
+  </main>
+  <script src="portal.js"></script>
+</body>
+</html>

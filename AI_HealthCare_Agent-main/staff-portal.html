@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff Portal | Carepoint</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="portal-page staff-portal">
+  <main class="portal-shell">
+    <header class="portal-header">
+      <a class="portal-brand" href="index.html"><span>+</span> CAREPOINT</a>
+      <a class="portal-signout" href="index.html">Sign out</a>
+    </header>
+    <section class="portal-welcome">
+      <p class="eyebrow">STAFF PORTAL</p>
+      <h1>Good morning, <em id="staff-name">team</em>.</h1>
+      <p>Your patient care workspace is ready.</p>
+    </section>
+    <section class="portal-stats" aria-label="Staff summary">
+      <div><strong>12</strong><span>Today's appointments</span></div><div><strong>03</strong><span>Awaiting approval</span></div><div><strong>08</strong><span>Unread chats</span></div>
+    </section>
+    <section class="portal-layout" aria-label="Staff portal sections">
+      <div class="portal-main-column">
+        <article class="portal-section"><div class="section-heading"><div><span class="card-kicker">APPOINTMENT APPROVALS</span><h2>Assign and approve</h2></div><a href="#">View schedule</a></div><div id="booking-requests"><div class="appointment-row" data-patient="Alex Morgan"><div class="patient-avatar">AM</div><div class="appointment-details"><strong>Alex Morgan</strong><small>Follow-up consultation &middot; Sep 08, 10:30 AM</small></div><select class="assign-doctor" aria-label="Assign doctor"><option value="maya">Dr. Maya Patel</option><option value="li">Dr. Daniel Li</option><option value="rivera">Dr. Sofia Rivera</option></select><span class="appointment-status pending">Pending</span><button class="approve-button" type="button">Approve</button></div><div class="appointment-row" data-patient="Jamie Rivera"><div class="patient-avatar">JR</div><div class="appointment-details"><strong>Jamie Rivera</strong><small>Annual wellness visit &middot; Sep 08, 2:00 PM</small></div><select class="assign-doctor" aria-label="Assign doctor"><option value="maya">Dr. Maya Patel</option><option value="li">Dr. Daniel Li</option><option value="rivera">Dr. Sofia Rivera</option></select><span class="appointment-status pending">Pending</span><button class="approve-button" type="button">Approve</button></div></div></article>
+        <article class="portal-section coordination-section"><div class="section-heading"><div><span class="card-kicker">CARE COORDINATION AGENTS</span><h2>Operational command center</h2></div><span class="review-badge">Human review required</span></div><p>Specialized agents monitor verified administrative records and prepare queues for staff review.</p><div id="coordination-agents" class="agent-grid"></div><div class="coordination-note"><strong>Self-Approval Agent</strong><span id="self-approval-status">Preparing verified registration, appointment, consultation, and medication review queues.</span><button id="self-approval-review" class="agent-review-button" type="button">Prepare review queue</button></div></article>
+        <article class="portal-section"><div class="section-heading"><div><span class="card-kicker">PATIENT RECORDS</span><h2>Recent patient activity</h2></div><a href="#">Search records</a></div><div id="staff-patient-records"><div class="patient-record-row"><div class="patient-avatar coral">AM</div><div><strong>Alex Morgan</strong><small>Blood pressure review &middot; Updated today</small></div><button class="record-result open-record" type="button" data-patient="Alex Morgan">View record &rarr;</button></div><div class="patient-record-row"><div class="patient-avatar">JR</div><div><strong>Jamie Rivera</strong><small>Lab results &middot; Updated yesterday</small></div><button class="record-result open-record" type="button" data-patient="Jamie Rivera">View record &rarr;</button></div><div class="patient-record-row"><div class="patient-avatar">TS</div><div><strong>Taylor Singh</strong><small>Care plan &middot; Updated Aug 18</small></div><button class="record-result open-record" type="button" data-patient="Taylor Singh">View record &rarr;</button></div></div></article>
+        <article class="portal-section record-detail-section" id="staff-record-detail" hidden><div class="section-heading"><div><span class="card-kicker">PATIENT RECORD</span><h2 id="staff-record-name">Select a patient</h2></div><span class="online-status">Read only</span></div><div class="doctor-patient-details"><div><small>Email</small><strong id="staff-record-email">Not provided</strong></div><div><small>Phone</small><strong id="staff-record-phone">Not provided</strong></div><div><small>Current medicines</small><strong id="staff-record-medications">Not provided</strong></div></div><div class="medication-callout"><span class="card-kicker">DOCTOR PRESCRIPTIONS</span><strong id="staff-record-prescriptions">No prescriptions recorded</strong></div></article>
+        <article class="portal-section medication-section"><div class="section-heading"><div><span class="card-kicker">MEDICATION DETAILS</span><h2>Patient medicines</h2></div><span class="online-status">Review before dispensing</span></div><div id="staff-medication-list"><div class="medication-row"><span class="medication-icon">+</span><div><strong>Alex Morgan</strong><small>Medication list not yet provided</small></div></div></div></article>
+      </div>
+      <aside class="portal-side-column">
+        <article class="portal-section staff-summary"><span class="card-kicker">CLINIC SNAPSHOT</span><h2>Care in motion</h2><div class="metric-line"><span>Appointments completed</span><strong>75%</strong></div><div class="metric-bar metric-75"><span></span></div><div class="metric-line"><span>Follow-ups on track</span><strong>86%</strong></div><div class="metric-bar metric-86"><span></span></div></article>
+        <article class="portal-section patient-directory"><div class="section-heading"><div><span class="card-kicker">PATIENT CONVERSATIONS</span><h2>Start with a patient</h2></div><span class="online-status">Verified records</span></div><div id="staff-conversation-patients"><button class="patient-choice active" type="button" data-patient="Alex Morgan"><span class="patient-avatar coral">AM</span><span><strong>Alex Morgan</strong><small>Active conversation</small></span></button></div></article>
+        <article class="portal-section chat-section"><div class="section-heading"><div><span class="card-kicker">PATIENT CHAT</span><h2 id="staff-chat-patient">Alex Morgan</h2></div><span class="online-status">Active</span></div><div class="chat-thread"><p class="chat-bubble incoming" data-sender="Alex Morgan">Hi Doctor, should I continue recording my blood pressure twice a day?</p><small class="chat-time">Today, 8:48 AM</small><p class="chat-bubble outgoing" data-sender="Carepoint Staff">Yes, please continue until our follow-up. I will review the readings together with you.</p></div><form class="chat-form"><input class="chat-input" type="text" placeholder="Reply to Alex..." aria-label="Message patient" /><button type="submit" aria-label="Send message">&rarr;</button></form></article>
+      </aside>
+    </section>
+  </main>
+  <script src="portal.js"></script>
+</body>
+</html>
